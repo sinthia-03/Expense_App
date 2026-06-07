@@ -1,8 +1,8 @@
 import 'dart:ui';
-
 import 'package:expense_app/firebase_options.dart';
-import 'package:expense_app/screens/home_screen.dart';
-import 'package:expense_app/screens/splash_screen.dart';
+import 'package:expense_app/screens/login_screen.dart';
+import 'package:expense_app/screens/sign_up_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
@@ -34,8 +34,23 @@ class _ExpenseAppState extends State<ExpenseApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SplashScreen(),
 
+      home: StreamBuilder(stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (BuildContext context, AsyncSnapshot<User?> snapshot) {
+            if (snapshot.hasError) {
+              return Scaffold(
+                body: Center(
+                  child: Text(snapshot.error.toString()),
+                ),
+              );
+            }
+            if (snapshot.hasData) {
+              return LoginScreen();
+            } else {
+              return SignUpScreen();
+            }
+          }
+    ),
     );
   }
 }

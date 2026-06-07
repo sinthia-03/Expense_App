@@ -1,6 +1,8 @@
 import 'package:expense_app/utilits/asset_path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'login_screen.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -9,6 +11,9 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,4 +27,5 @@ class _SplashScreenState extends State<SplashScreen> {
 
     );
   }
+
 }
