@@ -1,0 +1,23 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(128, 128)">
+    <!-- প্রধান বড় অংশ (উপরের এবং বামের অংশ) যা ৪৫ ডিগ্রি থেকে ২২৫ ডিগ্রি পর্যন্ত বিস্তৃত -->
+    <path d="M 0 0 L 70.71 -70.71 A 100 100 0 1 0 -70.71 70.71 Z" fill="url(#mainGradient)" />
+    
+    <!-- নিচের ছোট টুকরোটি (ডানের অংশ) যা ২২৫ ডিগ্রি থেকে ৩১৫ ডিগ্রি পর্যন্ত বিস্তৃত -->
+    <path d="M 0 0 L -70.71 70.71 A 100 100 0 0 0 70.71 70.71 Z" fill="url(#bottomGradient)" />
+  </g>
+
+  <defs>
+    <!-- মূল অংশের জন্য বেগুনী গ্রেডিয়েন্ট -->
+    <linearGradient id="mainGradient" x1="-70" y1="-70" x2="50" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9d66ff" />
+      <stop offset="100%" stop-color="#693dfa" />
+    </linearGradient>
+
+    <!-- নিচের টুকরোর জন্য হালকা ল্যাভেন্ডার গ্রেডিয়েন্ট -->
+    <linearGradient id="bottomGradient" x1="-50" y1="50" x2="50" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#c4afff" />
+      <stop offset="100%" stop-color="#b091ff" />
+    </linearGradient>
+  </defs>
+</svg>
