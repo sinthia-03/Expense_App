@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:expense_app/firebase_options.dart';
 import 'package:expense_app/screens/login_screen.dart';
 import 'package:expense_app/screens/sign_up_screen.dart';
+import 'package:expense_app/screens/splash_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -45,7 +46,7 @@ class _ExpenseAppState extends State<ExpenseApp> {
               );
             }
             if (snapshot.hasData) {
-              return LoginScreen();
+              return SplashScreen();
             } else {
               return SignUpScreen();
             }
