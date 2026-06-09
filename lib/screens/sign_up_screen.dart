@@ -3,7 +3,10 @@ import 'package:expense_app/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+
+import 'login_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -20,6 +23,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   bool _signUpInProgress = false;
+
+  void _onTaplogin(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+  }
 
   @override
   void initState() {
@@ -114,6 +121,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     },
                     child: Text('Sign Up'),
                   ),
+              Center(
+                child: RichText(text: TextSpan(
+                    text: "Have an account? ",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500),
+                    children: [
+                      TextSpan(
+                          text: 'Login',
+                          recognizer: TapGestureRecognizer()..onTap = _onTaplogin
+                      )
+                    ]
+                )),
+              )
+
                 ],
               ),
             ),
@@ -156,6 +175,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       }
     }
   }
+
+
   void _clearTextFiled(){
     _emailTEController.clear();
     _passwordTEController.clear();
