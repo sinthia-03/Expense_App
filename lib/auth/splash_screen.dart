@@ -1,5 +1,5 @@
+import 'package:expense_app/auth/main_navi_screen.dart';
 import 'package:expense_app/screens/home_screen.dart';
-import 'package:expense_app/screens/sign_up_screen.dart';
 import 'package:expense_app/utilits/asset_path.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
     final user = FirebaseAuth.instance.currentUser;
 
     if (user !=null) {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainNaviScreen()));
 
     } else {
       Navigator.pushReplacement(
